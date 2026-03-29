@@ -1,56 +1,22 @@
-"use client";
-
-import { useState } from "react";
 import PersonalProjects from "./personal-projects";
 import SchoolProjects from "./school-projects";
 import StudentClubProjects from "./student-club-projects";
-import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 export default function Projects() {
-  const [filter, changeFilter] = useState("verv");
-
   return (
-    <div className="space-y-8 flex flex-col justify-center items-center sm:mx-64">
-      <h1 className="text-left w-full font-semibold text-shadow text-4xl">Prosjekter og Verv</h1>
-      <div className="flex flex-col sm:flex-row sm:justify-between w-full border-b-2">
-        <Button
-          className={cn("", { "text-shadow": filter === "verv" })}
-          variant={"backgroudblurproject"}
-          onClick={() => changeFilter("verv")}
-        >
-          Verv
-        </Button>
-        <Button
-          className={cn("", { "text-shadow": filter === "sideprosjekter" })}
-          variant={"backgroudblurproject"}
-          onClick={() => changeFilter("sideprosjekter")}
-        >
-          Sideprosjekter
-        </Button>
-        <Button
-          className={cn("", { "text-shadow": filter === "skole" })}
-          variant={"backgroudblurproject"}
-          onClick={() => changeFilter("skole")}
-        >
-          Skole
-        </Button>
-      </div>
-      {filter === "verv" && (
-        <div>
-          <StudentClubProjects />
-        </div>
-      )}
-      {filter === "skole" && (
-        <div>
-          <SchoolProjects />
-        </div>
-      )}
-      {filter === "sideprosjekter" && (
-        <div>
-          <PersonalProjects />
-        </div>
-      )}
+    <div className="max-w-2xl mx-auto px-6 pb-24 flex flex-col gap-20">
+      <section id="verv">
+        <h2 className="font-bold text-2xl pb-3 border-b-2 mb-8">Verv</h2>
+        <StudentClubProjects />
+      </section>
+      <section id="sideprosjekter">
+        <h2 className="font-bold text-2xl pb-3 border-b-2 mb-8">Prosjekter</h2>
+        <PersonalProjects />
+      </section>
+      <section id="skoleprosjekter">
+        <h2 className="font-bold text-2xl pb-3 border-b-2 mb-8">Skoleprosjekter</h2>
+        <SchoolProjects />
+      </section>
     </div>
   );
 }

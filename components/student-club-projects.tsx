@@ -22,7 +22,7 @@ const groupProjects = [
     role: "Styremedlem",
     discription:
       "I hovedstyret til echo har vi ansvar for gjøre hverdagen til informatikkstudenter så bra som mulig. Dette gjør vi ved å styrke og ta besluttinger om undergruppene til echo.",
-    linkname: "",
+    linkname: "echo.uib.no",
     link: "https://echo.uib.no/for-studenter/gruppe/hovedstyret",
     tech: "",
   },
@@ -30,33 +30,20 @@ const groupProjects = [
 
 export default function StudentClubProjects() {
   return (
-    <div >
-      <div className="flex flex-col space-y-8 ">
-        {groupProjects.map((project) => {
-          return (
-            <div key={project.projectname} >
-              <div>
-                <div className="flex">
-                  <p className="font-bold text-xl">{project.projectname}</p>
-                  <ul className="list-disc px-6">
-                    <li className="font-semibold pt-1 opacity-70">
-                      {project.role}
-                    </li>
-                  </ul>
-                </div>
-                <p className="text-xs pb-4 opacity-70">{project.tech}</p>
-                <p className="pb-4">{project.discription}</p>
-                <a
-                  href={project.link}
-                  className=" hover:text-shadow hover:underline text-sm "
-                >
-                  Se nettsiden {"->"}
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+    <div className="flex flex-col gap-10">
+      {groupProjects.map((project) => (
+        <div key={project.projectname}>
+          <div className="flex items-baseline gap-2 mb-1">
+            <p className="font-bold text-lg">{project.projectname}</p>
+            <p className="text-sm">— {project.role}</p>
+          </div>
+          {project.tech && <p className="text-xs mb-3">{project.tech}</p>}
+          <p className="mb-3 text-sm leading-relaxed">{project.discription}</p>
+          <a href={project.link} className="text-sm underline-offset-4 hover:underline">
+            {project.linkname} →
+          </a>
+        </div>
+      ))}
     </div>
   );
 }
