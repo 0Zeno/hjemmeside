@@ -5,11 +5,11 @@
 html {
   scroll-behavior: smooth;
 }
- 
+
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #eb777d;
+    --foreground: #e66a70;
 
     --border: #eb777d;
     --input: #e5e6eb;
@@ -17,9 +17,8 @@ html {
 
     --radius: 0.5rem;
   }
-
 }
- 
+
 @layer base {
   * {
     @apply border-border;

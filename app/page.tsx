@@ -16,21 +16,22 @@ export default function Home() {
     age--;
   }
   return (
-    <div>
-      <div className="flex flex-col p-4 sm:p-16 pt-4 sm:pt-8 text-center">
-        <h2 className="sm:text-2xl text-lg pt-6 font-semibold  text-opacity-50 dark:text-opacity-50">
+    <div className="flex flex-col mx-auto items-center max-w-5xl">
+      <div className="flex flex-col p-4 sm:p-16 pt-4 sm:pt-8 ">
+        <h2 className="sm:text-2xl text-lg pt-6 text-opacity-50 dark:text-opacity-50">
           Hei, jeg heter
         </h2>
-        <h1 className=" md:text-8xl text-4xl font-extrabold">
+        <h1 className=" md:text-8xl text-4xl font-bold">
           Zeno Elio Leonardi
         </h1>
-        <p className="text-shadow sm:text-2xl font-semibold text-lg pt-2 text-opacity-50 dark:text-opacity-50">
+        <p className="text-shadow sm:text-2xl text-lg pt-2 text-opacity-50 dark:text-opacity-50">
           Jeg er en {age} år gammel informatikk student ved Universitetet i
           Bergen
         </p>
         <Socials />
+
+        <Projects />
       </div>
-      <Projects />
     </div>
   );
 }

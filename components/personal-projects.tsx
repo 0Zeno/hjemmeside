@@ -33,7 +33,10 @@ export default function PersonalProjects() {
           <p className="font-bold text-lg mb-1">{project.projectname}</p>
           <p className="text-xs mb-3">{project.tech}</p>
           <p className="mb-3 text-sm leading-relaxed">{project.discription}</p>
-          <a href={project.link} className="text-sm underline-offset-4 hover:underline">
+          <a
+            href={project.link}
+            className="text-sm underline-offset-4 hover:underline"
+          >
             {project.linknavn}
           </a>
         </div>

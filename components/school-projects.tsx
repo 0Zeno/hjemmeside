@@ -9,6 +9,16 @@ const projects = [
     class: "INF218",
     year: "Høst 2025",
   },
+  {
+    projectname: "Nova JS",
+    discription:
+      "Implementerte et fragment av Temporal standarden i NovaJS som er en JavaScript engine.",
+    linkname: "Sjekk ut koden →",
+    link: "https://github.com/trynova/nova",
+    tech: "Rust",
+    class: "Z-INF",
+    year: "Vår 2026",
+  },
 ];
 
 export default function SchoolProjects() {
@@ -22,7 +32,10 @@ export default function SchoolProjects() {
           </div>
           <p className="text-xs mb-3">{project.tech}</p>
           <p className="mb-3 text-sm leading-relaxed">{project.discription}</p>
-          <a href={project.link} className="text-sm underline-offset-4 hover:underline">
+          <a
+            href={project.link}
+            className="text-sm underline-offset-4 hover:underline"
+          >
             {project.linkname}
           </a>
         </div>
